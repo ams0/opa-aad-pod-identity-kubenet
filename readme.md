@@ -1,4 +1,4 @@
-# Prevent
+# Prevent ARP spoofing on kubenet AKS clsuters
 
 AAD Pod Identity in AKS is considered insecure when running on kubenet clusters ([reference](https://azure.github.io/aad-pod-identity/docs/configure/aad_pod_identity_on_kubenet/)). To prevent ARP spoofing from non-autorized pods, you can use a PodSecurityPolicy, but that's on the way to deprecation; the common way to implement policies now is with OpenPolicyAgent/Gatekeeper. Here's a quick guide on how to prevent pods to have the `NET_RAW' capability using constraints.
 
