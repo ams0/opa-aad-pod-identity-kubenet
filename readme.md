@@ -45,3 +45,11 @@ If you want to check which capabilites are enabled, you can use the `capsh` comm
 ```bash
 kubectl exec opa-disallowed -- apk add -U libcap; capsh --print
 ```
+
+Install the AAD Pod Identity with Helm:
+
+```bash
+helm repo add aad-pod-identity https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts
+
+helm install --create-namespace -n aad-pod-identity --set nmi.allowNetworkPluginKubenet=true aad-pod-identity aad-pod-identity/aad-pod-identity
+```
